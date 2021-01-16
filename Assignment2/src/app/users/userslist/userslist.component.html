@@ -1,0 +1,25 @@
+<div class="container" style="background-color: aquamarine;">
+    <br>
+    <h2 class="title" align='center'>Users List</h2>
+    <div class="panel-block" *ngIf='users.length>0 ;else elseblock'>
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Email</th>
+          </thead>
+          <tbody>
+              <tr *ngFor='let user of users'>
+                  <td>{{user.name}}</td>
+                  <td>{{user.username}}</td>
+                  <td appHighlighter>{{user.email}}</td>
+              </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+<ng-template #elseblock>
+    <div class="notification container elseblock is-info is-light">
+       <h3 class="subtitle">No Users In Records</h3> 
+    </div>
+</ng-template>
